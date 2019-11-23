@@ -17,6 +17,9 @@ import { Component } from '@angular/core';
         <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
       </li>
       <li>
+        <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Din mongol</a></h2>
+      </li>
+      <li>
         <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
       </li>
       <li>

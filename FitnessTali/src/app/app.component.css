@@ -1,0 +1,20 @@
+.main{
+    margin-top: 1rem;
+    width: 80%;
+    margin: auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+  }
+.page{
+    display: none;
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    padding: 1rem 2rem;
+}
+.active{
+    display: block;
+}

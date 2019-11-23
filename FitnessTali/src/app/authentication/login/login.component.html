@@ -1,0 +1,54 @@
+<div fxLayoutAlign="center">
+    
+    <form (submit)="onUserLogin(loginForm)" #loginForm="ngForm">
+  
+        <div>
+              <h1>Please Log in</h1><br>
+              <br>
+            <mat-form-field> 
+                <textarea matInput 
+                name="me"
+                ngModel>
+                    
+                </textarea>
+              <input 
+              name="username" 
+              ngModel 
+              #username="ngModel" 
+              type="text" 
+              placeholder="Username"
+              matInput 
+              required >
+              <mat-hint>Type a unique username</mat-hint>
+              <mat-error *ngIf = "username.invalid && username.errors.requird">
+                  The username field is requird!
+              </mat-error>
+            </mat-form-field>
+          </div>
+        <div>
+           <mat-form-field>
+            <input 
+            matInput 
+            type="password" 
+            name="password" 
+            ngModel 
+            required
+            value=" "
+            #password ="ngModel" 
+            placeholder="Password">
+            <mat-hint>Type a unique password</mat-hint>
+            <mat-error *ngIf = "password.invalid && password.errors.requird">
+                  The password field is requird!
+              </mat-error>
+          </mat-form-field>
+  
+          </div>
+          <br>
+          <button mat-raised-button color="primary" type="submit">Login</button>
+          <br>
+          <div>
+              <a type="button" href="/createUser">Signup</a>
+          </div>
+    </form>
+  
+  </div>

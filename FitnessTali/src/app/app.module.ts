@@ -13,21 +13,17 @@ import {
 } from '@angular/material/';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-//import { SignupComponent } from './authentication/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-//import { LoginComponent } from './authentication/login/login.component';
 import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    //SignupComponent,
     HomeComponent,
     HeaderComponent,
     routingComponents
-    //LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <div fxLayoutAlign="center">
     
-    <form (submit)="onUserSignup(signupForm)" #signupForm="ngForm">
+    <form (ngSubmit)="onUserSignup(usernameSignup.value,passwordSignup.value)" #signupForm="ngForm">
   
         <div>
               <h1>Please Signup</h1><br>
@@ -8,9 +8,8 @@
             <mat-form-field> 
               <input 
               name="usernameSignup" 
-               
-              value =""
-              ngModel #usernameSignup="ngModel" 
+              ngModel
+              #usernameSignup="ngModel" 
               type="text" 
               placeholder="Username"
               matInput 

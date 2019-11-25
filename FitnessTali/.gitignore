@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# .gitignore file
+# Dependency directory
+node_modules
+# Environment variables
+.env

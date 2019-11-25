@@ -1,13 +1,21 @@
 var express = require('express');
 var router = express.Router();
 var ctrlLocations = require('../controllers/controllerLocations');
+var users = require('../controllers/userController.js');
 
-router
-    .route('/')
-        .get(ctrlLocations.locationsCreate)
-        .post(ctrlLocations.locationsCreate);
-// router
-//     .route('/api/locations/:locationid')
-//         .get(ctrlLocations.locationsReadOne)
-//         .put(ctrlLocations.locationsUpdateOne)
-//         .delete(ctrlLocations.locationsDeleteOne);
+router.get('/', (req, res) => res.status(200).json({message: 'Hello World!'}));
+
+router.post('/login', users.register);
+router.post('/signup', users.register);
+
+
+router.post('/', (req, res) => res.status(200).json({message: 'Hello World!'}));
+
+
+
+router.all('/*', function (req, res) {
+    res.status(404).json({message: 'Not Found!'})
+  });
+  
+  module.exports = router;
+  

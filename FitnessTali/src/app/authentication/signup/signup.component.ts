@@ -10,9 +10,8 @@ import { NgForm } from '@angular/forms';
 export class SignupComponent {
 
   constructor(public authenticationService: AuthenticationService) { }
-  onUserSignup(form: NgForm) {
+  onUserSignup(username: string,password: string) {
    
-    this.authenticationService.addSignupData("hey", "hey");
-
+    this.authenticationService.addSignupData(username, password);
   }
 }

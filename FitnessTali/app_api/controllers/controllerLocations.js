@@ -25,8 +25,9 @@ const reviewsCreate = function (req, res) {
 
 
 module.exports.locationsCreate = function (req, res) {
-    res.status(200);
-    res.json({"message" : "success"});
+    // res.status(200);
+    // res.json({"message" : "success"});
+    console.log("Modtaget data");
     };
     
 var sendJsonResponse = function(res, status, content) 

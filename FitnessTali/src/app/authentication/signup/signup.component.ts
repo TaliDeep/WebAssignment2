@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from "../../authentication.service";
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
 
-  constructor() { }
+  constructor(public authenticationService: AuthenticationService) { }
+  onUserSignup(form: NgForm) {
+   
+    this.authenticationService.addSignupData("hey", "hey");
 
-  ngOnInit() {
   }
-
 }

@@ -3,11 +3,11 @@ var router = express.Router();
 var ctrlLocations = require('../controllers/controllerLocations');
 
 router
-    .route('/api/locations')
-        .get(ctrlLocations.locationsListByDistance)
+    .route('/')
+        .get(ctrlLocations.locationsCreate)
         .post(ctrlLocations.locationsCreate);
-router
-    .route('/api/locations/:locationid')
-        .get(ctrlLocations.locationsReadOne)
-        .put(ctrlLocations.locationsUpdateOne)
-        .delete(ctrlLocations.locationsDeleteOne);
+// router
+//     .route('/api/locations/:locationid')
+//         .get(ctrlLocations.locationsReadOne)
+//         .put(ctrlLocations.locationsUpdateOne)
+//         .delete(ctrlLocations.locationsDeleteOne);

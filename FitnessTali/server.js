@@ -9,7 +9,12 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/dist/FitnessTali'));
 
-app.use("/api",routesApi);
+//app.use("/",routesApi);
+
+app.get("/",function(req,res){
+    console.log("modtaget");
+})
+
 app.get('/', (req,res) => res.sendFile(path.join(__dirname)));
 const server = http.createServer(app);
 

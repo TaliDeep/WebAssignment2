@@ -6,9 +6,11 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const http = require('http');
 const path = require('path');
-var routesApi = require('./app_api/routes/index');
+var routesApi = require('./app_api/routes/index.js');
 const app = express();
 const server = http.createServer(app);
+
+
 
 var MongoClient = require('mongodb').MongoClient, assert = require('assert');
 // Connection URL
@@ -29,12 +31,9 @@ app.use(express.static(__dirname + '/dist/FitnessTali'));
 
 app.use("/api",routesApi);
 
-app.get("/",function(req,res){
-    console.log("modtaget");
-})
+
 app.all('*', function(req, res) {
     res.status(200).sendFile(__dirname + '/dist/FitnessTali/index.html');
-    console.log(req.body);
   });
 
 server.listen(port,()=> console.log('Running...'));

@@ -19,7 +19,7 @@ export class AuthenticationService {
   private headers = new Headers({'Content-type': 'application/json'});
 
   constructor(private http: HttpClient, private router: Router) { }
-  private baseUrl = 'http://localhost:3000/';
+  private baseUrl = 'http://localhost:3000/api';
 
   //private authentications: Authentication[] = [];
 
@@ -39,7 +39,7 @@ export class AuthenticationService {
 
 
   addSignupData(username: string, password: string) {
-    let userUrl = this.baseUrl + '/api/signup';
+    let userUrl = this.baseUrl + '/signup';
     const body: Authentication = { username, password};
     this.http.post<Authentication>(userUrl,body).toPromise().then((data:any)=> {
       console.log("data");

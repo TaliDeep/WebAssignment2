@@ -13,5 +13,13 @@ export class SignupComponent {
   onUserSignup(username: string,password: string) {
    
     this.authenticationService.addSignupData(username, password);
+    
+    // .subscribe(
+    //   res => {
+    //     console.log(res)
+    //     localStorage.setItem('token', res.token)
+    //   },
+    //   err => console.log(err)
+    // )
   }
 }

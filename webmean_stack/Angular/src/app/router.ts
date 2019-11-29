@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { SignupComponent } from './user/signup/signup.component';
+import { SigninComponent} from './user/signin/signin.component';
+import { UserProfileComponent} from './user-profile/user-profile.component';
+import { AuthGuard } from './auth/auth.guard';
 
 export const ngRoutes: Routes = [
     {
@@ -8,6 +11,13 @@ export const ngRoutes: Routes = [
         children: [{path: '', component: SignupComponent}]
     },
     {
-        path: '', redirectTo:'/signup', pathMatch: 'full'
+        path: 'login', component: UserComponent,
+        children: [{path: '', component: SigninComponent}]
+    },
+    {
+        path: 'userprofile', component: UserProfileComponent, canActivate:[AuthGuard]
+    },
+    {
+        path: '', redirectTo:'/login', pathMatch: 'full'
     }
 ];

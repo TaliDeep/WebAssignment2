@@ -46,6 +46,11 @@ export class SignupComponent implements OnInit {
     form.resetForm();
     this.serverError = '';
   }
+  backToLogin(){
+    this.router.navigate(['/login']);
+
+  }
+
 
 }
 

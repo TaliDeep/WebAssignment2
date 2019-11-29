@@ -1,11 +1,16 @@
-<div fxLayoutAlign="center" >
-     <h1>User Profil</h1>
+<mat-toolbar color="primary">
+    <span>Welcome to Fitness</span>
+    <div class="divider"></div>
+    <button mat-raised-button color="accent" type="button" (click)="onLogout()" value="Logout">Logout</button>
+</mat-toolbar>
 
-        <body>
-            <td>{{userDetails.username}}</td>
-            <td>
-                <input type="button" (click)="onLogout()" value="Logout">
-            </td>
+<div fxLayoutAlign="center">
+    <h1>User Profil</h1>
+    <div>
+        <h1>{{userDetails.username}}</h1><br>
+        <br>
+    </div>
 
-        </body>>
+    <br>
+
 </div>

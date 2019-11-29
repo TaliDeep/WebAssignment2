@@ -1,3 +1,6 @@
+<mat-toolbar color="primary">
+        <span>Welcome to Fitness</span>
+    </mat-toolbar>
 <div fxLayoutAlign="center">
     <form (ngSubmit)="onSigninUser(signinForm)" #signinForm="ngForm">
         <div>
@@ -25,7 +28,10 @@
         </div>
         <br>
         <button mat-raised-button color="primary" type="submit">SignIn</button>
-        <a href="/signup">Signup</a>
+        <br>
+        <br>
+
+        <button mat-raised-button color="accent" type="submit" (click)="goToSignup()" value="singup">SignUp</button>
     </form>
 
     <div class="succes" *ngIf="showSuccessMessages">

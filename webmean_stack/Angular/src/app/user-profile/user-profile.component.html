@@ -7,3 +7,65 @@
 <div *ngIf="userDetails">
     <h1> Username: {{userDetails.username}}</h1><br>
 </div>
+<div fxLayoutAlign="center">
+
+    <form (ngSubmit)="onPostExercise(postExerciseForm)" #postExerciseForm="ngForm">
+        <h1>Create an exercise</h1>
+        <mat-form-field>
+
+            <input name="exercise" ngModel #username="ngModel" type="text" placeholder="Exercise" matInput required>
+        </mat-form-field>
+        <mat-form-field>
+
+            <input name="description" ngModel #username="ngModel" type="text" placeholder="Description" matInput
+                required>
+        </mat-form-field>
+        <mat-form-field>
+
+            <input name="sets" ngModel #username="ngModel" type="text" placeholder="Set" matInput required>
+        </mat-form-field>
+        <mat-form-field>
+
+            <input name="repetitions" ngModel #username="ngModel" type="text" placeholder="Reps/time" matInput required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Enter</button>
+    </form>
+</div>
+
+
+
+
+<div fxLayoutAlign="center"> 
+    <table mat-table [dataSource]="userData" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="exercise">
+            <th mat-header-cell *matHeaderCellDef> Exercise </th>
+            <td mat-cell *matCellDef="let element"> {{element.exercise}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="repetitions">
+            <th mat-header-cell *matHeaderCellDef> Reps/Time </th>
+            <td mat-cell *matCellDef="let element"> {{element.repetitions}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="sets">
+            <th mat-header-cell *matHeaderCellDef> sets </th>
+            <td mat-cell *matCellDef="let element"> {{element.sets}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

@@ -12,7 +12,9 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatFormFieldModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatPaginatorModule,
+  MatTableModule
 } from '@angular/material/';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +50,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     BrowserAnimationsModule,
     MatCardModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

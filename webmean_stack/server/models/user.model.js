@@ -22,7 +22,7 @@ userSchema.pre('save', function(next){
             this.saltSecret = salt;
             next();
         });
-    });
+    });  
 
 });
 

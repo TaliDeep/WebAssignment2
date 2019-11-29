@@ -17,14 +17,14 @@ export class SignupComponent implements OnInit {
   ngOnInit(){
   }
 
-  onUser(username: string, password: string, form : NgForm) {
+  onUser(form : NgForm) {
 
     this.userService.postUser(form.value).subscribe(
       
       res => {
         this.showSuccessMessages = true;
         setTimeout(() => this.showSuccessMessages = false, 4000);
-        this.resetForm(form)
+        this.resetForm(form);
         this.router.navigateByUrl('/userprofile');
 
       },

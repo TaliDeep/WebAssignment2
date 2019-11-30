@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+        <span>Welcome to Fitness</span>
+        <div class="divider"></div>
+        <button mat-raised-button color="accent" type="button" (click)="onLogout()" value="Logout">Logout</button>
+    </mat-toolbar>
+    
+    <div fxLayoutAlign="center" class="opret2">
+    
+        <form (ngSubmit)="onPostWorkout(postWorkoutForm)" #postWorkoutForm="ngForm">
+            <h1>Create a Workout - Program</h1>
+            <mat-form-field>
+                <input name="workout" ngModel #workout="ngModel" type="text" placeholder="Workout" matInput required>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Enter</button>
+            <br>
+            <button mat-raised-button color="primary" type="button" (click)="goToHome()" value="goToHome">Back</button>
+    
+        </form>
+    
+    </div>

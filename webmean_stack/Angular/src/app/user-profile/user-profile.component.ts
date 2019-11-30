@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
-import { Router} from "@angular/router";
+import { Router } from "@angular/router";
 import { NgForm } from '@angular/forms';
 
 
@@ -14,51 +14,47 @@ import { NgForm } from '@angular/forms';
 export class UserProfileComponent implements OnInit {
   userDetails;
   userData;
+  userWorkout;
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-
+  
     this.userService.getUserProfile().subscribe(
-      res=>{
+      res => {
         this.userDetails = res['user'];
       },
-      err=>{}
+      err => { }
     );
-
     this.userService.getUserExercise().subscribe(
-      res=>{
+      res => {
         this.userData = res['exercise'];
       },
-      err=>{}
+      err => { }
     );
-
+    this.userService.getUserWorkout().subscribe(
+      res => {
+        this.userWorkout = res['workout'];
+      },
+      err => { }
+    );
   }
 
   displayedColumns: string[] = ['exercise', 'description', 'repetitions', 'sets'];
 
-  onPostExercise(form : NgForm) {
+ 
 
-    this.userService.postExercise(form.value).subscribe();
-    this.resetForm(form);
-    this.refresh();
-
-  }
-
-  onLogout(){
+  onLogout() {
     this.userService.deleteToken();
     this.router.navigate(['/login']);
   }
-  resetForm(form: NgForm) {
-    this.userService.selectedExercise = {
-      exercise: '',
-      workoutID: '',
-      description: '',
-      sets: '',
-      repetitions: ''
-    };
-    form.resetForm();
+
+
+  goToAddExercise() {
+    this.router.navigate(['/addexercise']);
+
   }
-  refresh(): void {
-    window.location.reload();
-}
+  goToAddWorkout() {
+    this.router.navigate(['/addworkout']);
+
+  }
 }

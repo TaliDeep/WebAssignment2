@@ -14,7 +14,8 @@ import {
   MatFormFieldModule,
   MatCheckboxModule,
   MatPaginatorModule,
-  MatTableModule
+  MatTableModule,
+  MatSelectModule
 } from '@angular/material/';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,13 +29,18 @@ import { UserService } from './shared/user.service';
 
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { CreateExerciseComponent } from './create-exercise/create-exercise.component';
+import { CreateWorkoutComponent } from './create-workout/create-workout.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     SignupComponent,
     UserProfileComponent,
-    SigninComponent
+    SigninComponent,
+    CreateExerciseComponent,
+    CreateWorkoutComponent
     
   ],
   imports: [
@@ -52,7 +58,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     HttpClientModule,
     FlexLayoutModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

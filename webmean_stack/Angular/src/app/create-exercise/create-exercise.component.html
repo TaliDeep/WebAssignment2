@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+    <span>Welcome to Fitness</span>
+    <div class="divider"></div>
+    <button mat-raised-button color="accent" type="button" (click)="onLogout()" value="Logout">Logout</button>
+</mat-toolbar>
+
+<div fxLayoutAlign="center" class="opret2">
+
+    <form (ngSubmit)="onPostExercise(postExerciseForm)" #postExerciseForm="ngForm">
+        <h1>Create an exercise</h1>
+        <mat-form-field>
+                <mat-label>Workout-Program</mat-label>
+                <mat-select ngModel #workoutID="ngModel" name ='workoutID' size="5">
+                  <mat-option *ngFor="let item of userWorkout" selected='selected' [value]="item._id">
+                    {{item.workout}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        <mat-form-field>
+            <input name="exercise" ngModel #username="ngModel" type="text" placeholder="Exercise" matInput required>
+        </mat-form-field>
+        <mat-form-field>
+
+            <input name="description" ngModel #username="ngModel" type="text" placeholder="Description" matInput
+                required>
+        </mat-form-field>
+        <mat-form-field>
+
+            <input name="sets" ngModel #username="ngModel" type="text" placeholder="Set" matInput required>
+        </mat-form-field>
+        <mat-form-field>
+
+            <input name="repetitions" ngModel #username="ngModel" type="text" placeholder="Reps/time" matInput required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Enter</button>
+        <br>
+        <button mat-raised-button color="primary" type="button" (click)="goToHome()" value="goToHome">Back</button>
+
+    </form>
+
+</div>

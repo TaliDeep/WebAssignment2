@@ -4,6 +4,7 @@ import { User } from './user.model';
 import { Exercise } from './exercise.model';
 
 import { environment } from '../../environments/environment';
+import { Workout } from './workout.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,9 @@ export class UserService {
     sets: '',
     repetitions: ''
   };
+  selectedworkout: Workout = {
+    workout: ''
+  };
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
   constructor(private http: HttpClient) { }
@@ -31,6 +35,10 @@ export class UserService {
   postExercise(exercise: Exercise) {
     return this.http.post(environment.apiURL + '/exercise', exercise, this.noAuthHeader);
   }
+
+  postWorkout(workout: Workout) {
+    return this.http.post(environment.apiURL + '/workout', workout, this.noAuthHeader);
+  }
   login(authCredentials) {
     return this.http.post(environment.apiURL + '/authenticate', authCredentials);
   }
@@ -39,6 +47,10 @@ export class UserService {
   }
   getUserExercise() {
     return this.http.get(environment.apiURL + '/exercise');
+  }
+
+  getUserWorkout() {
+    return this.http.get(environment.apiURL + '/workout');
   }
   setToken(token: string) {
     localStorage.setItem('token', token);

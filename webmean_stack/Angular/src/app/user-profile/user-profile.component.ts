@@ -18,7 +18,7 @@ export class UserProfileComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-  
+
     this.userService.getUserProfile().subscribe(
       res => {
         this.userDetails = res['user'];
@@ -34,13 +34,17 @@ export class UserProfileComponent implements OnInit {
     this.userService.getUserWorkout().subscribe(
       res => {
         this.userWorkout = res['workout'];
+        
       },
       err => { }
     );
   }
 
   displayedColumns: string[] = ['exercise', 'description', 'repetitions', 'sets'];
+  onPickWorkout(){
+    window.location.reload();
 
+  }
  
 
   onLogout() {

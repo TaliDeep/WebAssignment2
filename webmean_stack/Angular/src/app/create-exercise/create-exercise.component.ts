@@ -25,6 +25,7 @@ export class CreateExerciseComponent implements OnInit {
     this.userService.postExercise(form.value).subscribe();
     this.router.navigate(['/userprofile']);
 
+
   }
   onLogout() {
     this.userService.deleteToken();

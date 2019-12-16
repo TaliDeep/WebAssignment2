@@ -34,9 +34,6 @@
         <button mat-raised-button color="accent" type="submit" (click)="goToSignup()" value="singup">SignUp</button>
     </form>
 
-    <div class="succes" *ngIf="showSuccessMessages">
-        It's saved with a problem
-    </div>
     <div class="alert" *ngIf="serverError">
         {{serverError}}
     </div>
